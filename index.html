@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travaz Holidays | Tour operator in Bangalore</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+  <img src="images/logo.png" alt="Travez Logo" height="40">
+</a>
+      <a class="navbar-brand" href="index.html">Travaz <span>Holidays</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="tourpackages.html">Tour Packages</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+          <a class="btn btn-brand" href="#" onclick="openWhatsApp()">
+            Plan My Trip
+          </a>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <div class="eyebrow">🌴 South India tours from Karnataka • Custom trips • Fast support</div>
+          <h1>Discover Karnataka, Kerala and Tamil Nadu with a compact modern travel experience.</h1>
+          <p>
+            travaz Holidays is a South India focused travel brand based in Karnataka, offering curated family trips,
+            honeymoon escapes, temple tours, hill station packages, and custom holiday plans across the most loved destinations in the south.
+          </p>
+
+          <div class="hero-badges">
+            <span>Karnataka Tours</span>
+            <span>Kerala Holidays</span>
+            <span>Tamil Nadu Getaways</span>
+          </div>
+
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#enquiry" class="btn btn-brand">Send Enquiry</a>
+            <a href="#popular" class="btn btn-outline-dark rounded-4 px-4 py-3 fw-bold">Explore South India</a>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="hero-card">
+            <div class="hero-image">
+              <div class="floating-mini">
+                <small>Popular South India Trips</small>
+                <strong>Coorg • Munnar • Ooty</strong>
+              </div>
+              <div class="image-caption">
+                <h4>Made for South India travellers</h4>
+                <p class="mb-0">Compact homepage design with strong enquiry flow and region-focused destination content.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-strip">
+        <div class="stat-box">
+          <h3>250+</h3>
+          <p>Custom itineraries created</p>
+        </div>
+        <div class="stat-box">
+          <h3>3 States</h3>
+          <p>Karnataka, Kerala & Tamil Nadu</p>
+        </div>
+        <div class="stat-box">
+          <h3>24/7</h3>
+          <p>Trip enquiry assistance</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Form Section -->
+  <section class="container">
+    <div class="form-container">
+      <h2 class="form-title">Quick Booking</h2>
+      <div class="whatsapp-subtitle">
+        <i class="fab fa-whatsapp"></i>
+        Book via WhatsApp
+      </div>
+
+      <form id="bookingForm" novalidate>
+        <div class="row g-2">
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" name="name" class="form-control" placeholder="Your name" required>
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="tel" name="phone" class="form-control" placeholder="Phone number" required>
+              <div class="invalid-feedback">Please enter your phone number.</div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="form-label">Pickup Location</label>
+              <input type="text"
+                     name="pickup"
+                     class="form-control"
+                     placeholder="Eg: Bengaluru / Mysuru / Mangalore"
+                     required>
+              <div class="invalid-feedback">Please enter pickup location.</div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="form-label">Drop Location</label>
+              <input type="text"
+                     name="drop"
+                     class="form-control"
+                     placeholder="Eg: Coorg / Ooty / Munnar"
+                     required>
+              <div class="invalid-feedback">Please enter drop location.</div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="form-group">
+              <label class="form-label">Trip Plan / Places to Visit <span class="text-danger">*</span></label>
+              <input type="text" name="intermediate" class="form-control" placeholder="Eg: Coorg / Wayanad / Ooty..." required>
+              <div class="invalid-feedback">Please enter at least one place to visit.</div>
+              <div class="whatsapp-note">
+                <i class="fas fa-info-circle"></i>
+                Add at least one place you want to visit so we can plan itinerary & pricing.
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="form-label">Pickup Date & Time</label>
+              <input type="datetime-local" name="pickupDT" class="form-control" required onclick="openDateTimePicker(this)" onfocus="openDateTimePicker(this)">
+              <div class="invalid-feedback">Please select pickup date & time.</div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="form-label">Drop Date & Time</label>
+              <input type="datetime-local" name="dropDT" class="form-control" required onclick="openDateTimePicker(this)" onfocus="openDateTimePicker(this)">
+              <div class="invalid-feedback">Please select drop date & time.</div>
+              <div id="durationDisplay" class="duration-display" style="display:none;"></div>
+            </div>
+          </div>
+
+          <!-- Vehicle Picker -->
+          <div class="col-md-8">
+            <div class="form-group">
+              <label class="form-label">Select Vehicle Type</label>
+
+              <input type="hidden" name="vehicle" id="vehicleInput" required>
+
+              <button type="button"
+                      class="form-control text-start"
+                      id="vehicleBtn"
+                      data-bs-toggle="modal"
+                      data-bs-target="#vehicleModal">
+                -- Choose a Vehicle --
+              </button>
+
+              <div class="invalid-feedback">Please select a vehicle.</div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              <label class="form-label">Passengers</label>
+              <input type="number" name="passengers" class="form-control" placeholder="Count" min="1" required>
+              <div class="invalid-feedback">Please enter passenger count.</div>
+            </div>
+          </div>
+
+          <!-- Accommodation Section -->
+          <div class="col-12">
+            <div class="form-group">
+              <label class="form-label">Accommodation Required?</label>
+
+              <div class="d-flex gap-2 flex-wrap acc-toggle" id="accToggleWrap">
+                <label class="btn btn-outline-dark active">
+                  <input type="radio" name="accommodation" value="No" autocomplete="off" checked>
+                  No
+                </label>
+
+                <label class="btn btn-outline-dark">
+                  <input type="radio" name="accommodation" value="Yes" autocomplete="off">
+                  Yes
+                </label>
+              </div>
+
+              <div class="form-text">Select “Yes” only if you want us to arrange stays.</div>
+            </div>
+          </div>
+
+          <!-- Accommodation Details -->
+          <div class="col-12" id="accommodationDetails" style="display:none;">
+            <div class="p-3 border rounded" style="background:#fff;">
+              <div class="row g-2">
+
+                <div class="col-md-6">
+                  <label class="form-label">Adults</label>
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary" type="button" id="adultMinus">-</button>
+                    <input type="number" class="form-control text-center" name="adults" id="adultsInput" value="1" min="1" max="20" readonly>
+                    <button class="btn btn-outline-secondary" type="button" id="adultPlus">+</button>
+                  </div>
+                  <div class="invalid-feedback">Adults must be at least 1.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label">Kids</label>
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary" type="button" id="childMinus">-</button>
+                    <input type="number" class="form-control text-center" name="children" id="childrenInput" value="0" min="0" max="10" readonly>
+                    <button class="btn btn-outline-secondary" type="button" id="childPlus">+</button>
+                  </div>
+                </div>
+
+                <div class="col-12" id="childAgesWrap" style="display:none;">
+                  <label class="form-label mb-1">Kid Age(s)</label>
+                  <div id="childAgesContainer" class="row g-2"></div>
+                  <div class="invalid-feedback d-block" id="childAgeError" style="display:none;">
+                    Please select age for each kid.
+                  </div>
+                  <div class="form-text">Please select age for each kid.</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <div class="form-group">
+              <label class="form-label">Special Requirements</label>
+              <textarea name="additional" class="form-control" rows="2" placeholder="Any special requests..."></textarea>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <button type="submit" class="submit-btn">
+              <i class="fab fa-whatsapp"></i>
+              Book Now via WhatsApp
+            </button>
+            <p class="small text-muted mt-2" style="margin-bottom:0;">
+              By submitting, you agree to be contacted via call/WhatsApp for booking assistance.
+            </p>
+          </div>
+
+        </div>
+      </form>
+
+      <!-- Vehicle Modal -->
+      <div class="modal fade" id="vehicleModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+          <div class="modal-content">
+            <div class="modal-header py-2">
+              <h6 class="modal-title">Choose Vehicle</h6>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body p-2" style="font-size:0.9rem;">
+              <div class="fw-bold mb-2">Small Cars (2–4 pax)</div>
+              <div class="vehicle-item" data-value="Dzire">Swift Dzire</div>
+              <div class="vehicle-item" data-value="Etios">Toyota Etios</div>
+
+              <hr class="my-2">
+
+              <div class="fw-bold mb-2">SUVs / MPVs (6–7 pax)</div>
+              <div class="vehicle-item" data-value="Ertiga">Maruti Ertiga</div>
+              <div class="vehicle-item" data-value="Innova">Toyota Innova</div>
+              <div class="vehicle-item" data-value="Crysta">Toyota Crysta</div>
+              <div class="vehicle-item" data-value="Hycross">Toyota Hycross</div>
+
+              <hr class="my-2">
+
+              <div class="fw-bold mb-2">Vans (12–16 pax)</div>
+              <div class="vehicle-item" data-value="Urbania">Urbania Van</div>
+
+              <hr class="my-2">
+
+              <div class="fw-bold mb-2">Tempo Travellers (12–18 pax)</div>
+              <div class="vehicle-item" data-value="Tempo Traveller AC">AC Tempo Traveller</div>
+              <div class="vehicle-item" data-value="Tempo Traveller NON-AC">Non-AC Tempo Traveller</div>
+
+              <hr class="my-2">
+
+              <div class="fw-bold mb-2">Coaches & Buses (21–55 pax)</div>
+              <div class="vehicle-item" data-value="Coach">Mini Coach (21–30 pax)</div>
+              <div class="vehicle-item" data-value="Bus">Tour Bus (30–55 pax)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        .floating-group{
+          z-index: 1040 !important;
+        }
+
+        #vehicleModal .modal-dialog{
+          max-width: 360px;
+          margin: auto;
+        }
+
+        #vehicleModal .modal-content{
+          border-radius: 16px;
+          max-height: 70vh;
+          overflow: hidden;
+        }
+
+        #vehicleModal .modal-body{
+          max-height: 55vh;
+          overflow-y: auto;
+          padding: 10px !important;
+          font-size: 0.85rem;
+        }
+
+        #vehicleModal .vehicle-item{
+          padding: 8px 10px;
+          border-radius: 10px;
+          margin-bottom: 8px;
+          font-size: 0.85rem;
+        }
+
+        #vehicleModal .modal-header{
+          padding: 10px 14px !important;
+        }
+
+        #vehicleModal .modal-title{
+          font-size: 0.95rem;
+        }
+
+        .vehicle-item{
+          padding:10px 10px;
+          border:1px solid #eee;
+          border-radius:10px;
+          margin-bottom:8px;
+          cursor:pointer;
+        }
+
+        .vehicle-item:active{
+          transform:scale(0.99);
+        }
+
+        .form-label{
+          font-size: 0.85rem;
+          margin-bottom: 4px;
+        }
+
+        .form-control,
+        textarea,
+        button.form-control{
+          font-size: 0.9rem;
+          padding: 8px 10px;
+        }
+
+        .row.g-2{
+          --bs-gutter-y: .5rem;
+        }
+      </style>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <div>© 2026 <strong>travaz Holidays</strong>. All rights reserved.</div>
+      <div>Home • Tour Packages • Services • About Us • Contact</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
