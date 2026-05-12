@@ -350,7 +350,7 @@ ${data.additional ? `\n📝 Special Requirements: ${data.additional}` : ''}
 
 Please provide itinerary and pricing. Thank you!`;
 
-  const whatsappURL = `https://wa.me/919591373534?text=${encodeURIComponent(message)}`;
+  const whatsappURL = `https://wa.me/917305868976?text=${encodeURIComponent(message)}`;
   window.open(whatsappURL, '_blank');
 });
 
@@ -379,6 +379,6 @@ if (intermediateEl) {
 
 function openWhatsApp(){
   const message = "Hi travaz Holidays, I want to plan a South India trip.";
-  const url = "https://wa.me/919591373534?text=" + encodeURIComponent(message);
+  const url = "https://wa.me/917305868976?text=" + encodeURIComponent(message);
   window.open(url, '_blank');
 }

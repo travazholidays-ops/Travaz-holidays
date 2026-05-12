@@ -1,0 +1,389 @@
+
+  .duration-filter-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 16px 0 28px;
+  }
+
+  .dur-btn {
+    padding: 10px 22px;
+    border: 2px solid #14b8a6;
+    background: #fff;
+    color: #14b8a6;
+    font-weight: 700;
+    font-size: 0.92rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 0;
+  }
+
+  .dur-btn:hover,
+  .dur-btn.active {
+    background: #14b8a6;
+    color: #fff;
+  }
+
+  /* ── Package Cards ── */
+  .pkg {
+    display: none;
+  }
+  .pkg[class~="1day"] {
+    display: block;
+  }
+
+  .destination-card {
+    position: relative;
+    min-height: 300px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 22px;
+    color: #fff;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #dcdcdc;
+    transition: transform 0.3s;
+  }
+
+  .destination-card:hover {
+    transform: scale(1.03);
+  }
+
+  .destination-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(17, 17, 17, 0.82), rgba(17, 17, 17, 0.18));
+  }
+
+  .destination-card>div {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+
+  .destination-card h4 {
+    font-weight: 700;
+    margin-bottom: 2px;
+    color: #fff;
+  }
+
+  .destination-card .sub {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.88rem;
+    margin-bottom: 10px;
+  }
+
+  .destination-card .badge-strip {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+
+  .destination-card .tag {
+    background: rgba(20, 184, 166, 0.25);
+    border: 1px solid rgba(20, 184, 166, 0.5);
+    color: #5eead4;
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .destination-card .meta-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .destination-card .meta-item {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .destination-card .meta-item strong {
+    color: #fff;
+    display: block;
+    font-size: 13px;
+  }
+
+  .btn-view {
+    width: 100%;
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.7);
+    color: #fff;
+    font-weight: 700;
+    padding: 10px;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+
+  .btn-view:hover {
+    background: #14b8a6;
+    border-color: #14b8a6;
+  }
+
+  /* ── Details Modal ── */
+  .pkg-modal .modal-dialog {
+    max-width: 720px;
+  }
+
+  .pkg-modal .modal-content {
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+  }
+
+  .modal-hero {
+    min-height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .modal-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.2));
+  }
+
+  .modal-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 24px;
+  }
+
+  .modal-hero-content h2 {
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+
+  .modal-hero-content p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .modal-badges {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  .modal-badge {
+    background: rgba(20, 184, 166, 0.3);
+    border: 1px solid rgba(20, 184, 166, 0.6);
+    color: #5eead4;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .modal-meta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid #eee;
+  }
+
+  .modal-meta-item {
+    padding: 14px 16px;
+    border-right: 1px solid #eee;
+    text-align: center;
+  }
+
+  .modal-meta-item:last-child {
+    border-right: none;
+  }
+
+  .modal-meta-item .lbl {
+    font-size: 10px;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+
+  .modal-meta-item .val {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111;
+  }
+
+  .modal-body-inner {
+    padding: 24px;
+  }
+
+  .day-block {
+    border: 1px solid #eee;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+
+  .day-block-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: #f9f9f9;
+    border-bottom: 1px solid #eee;
+  }
+
+  .day-num {
+    background: #14b8a6;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .day-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #111;
+    flex: 1;
+  }
+
+  .day-dist {
+    font-size: 11px;
+    color: #6b7280;
+  }
+
+  .slots {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .slot {
+    display: flex;
+    gap: 8px;
+  }
+
+  .slot-time {
+    font-size: 11px;
+    color: #14b8a6;
+    font-weight: 700;
+    min-width: 55px;
+    padding-top: 2px;
+  }
+
+  .slot-text {
+    font-size: 13px;
+    color: #444;
+    line-height: 1.55;
+  }
+
+  .slot-text strong {
+    color: #111;
+    font-weight: 700;
+  }
+
+  .section-lbl {
+    font-size: 10px;
+    font-weight: 700;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+
+  .hotel-pills {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .hotel-pill {
+    background: #f3f4f6;
+    border: 1px solid #dcdcdc;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    color: #374151;
+  }
+
+  .hotel-pill span {
+    color: #14b8a6;
+    font-weight: 700;
+  }
+
+  .tip-box {
+    background: #f0fdf9;
+    border-left: 3px solid #14b8a6;
+    padding: 12px 14px;
+    font-size: 12px;
+    color: #065f46;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .tip-box strong {
+    font-weight: 700;
+  }
+
+  .btn-book-now {
+    width: 100%;
+    background: #14b8a6;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    padding: 14px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.02em;
+    transition: background 0.2s;
+  }
+
+  .btn-book-now:hover {
+    background: #119e90;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 0 30px;
+  }
+
+  @media(max-width:575px) {
+    .modal-meta {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .modal-meta-item:nth-child(2) {
+      border-right: none;
+    }
+
+    .pkg-modal .modal-dialog {
+      margin: 0;
+    }
+
+    .modal-hero-content h2 {
+      font-size: 1.2rem;
+    }
+  }

@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/logo.png">
   <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -27,7 +28,7 @@
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto align-items-lg-center">
           <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="tourpackages.html">Tour Packages</a></li>
+          <li class="nav-item"><a class="nav-link" href="tour packages.html">Tour Packages</a></li>
           <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -45,7 +46,6 @@
     <div class="container">
       <div class="row align-items-center g-4">
         <div class="col-lg-6">
-          <div class="eyebrow">🌴 South India tours from Karnataka • Custom trips • Fast support</div>
           <h1>Discover Karnataka, Kerala and Tamil Nadu with a compact modern travel experience.</h1>
           <p>
             travaz Holidays is a South India focused travel brand based in Karnataka, offering curated family trips,
@@ -59,8 +59,8 @@
           </div>
 
           <div class="d-flex flex-wrap gap-3">
-            <a href="#enquiry" class="btn btn-brand">Send Enquiry</a>
-            <a href="#popular" class="btn btn-outline-dark rounded-4 px-4 py-3 fw-bold">Explore South India</a>
+            <a href="#quick-booking" class="btn btn-brand">Send Enquiry</a>
+            <a href="tour packages.html" class="btn btn-outline-dark rounded-4 px-4 py-3 fw-bold">Explore South India</a>
           </div>
         </div>
 
@@ -98,7 +98,7 @@
   </section>
 
   <!-- Booking Form Section -->
-  <section class="container">
+  <section class="container" id="quick-booking">
     <div class="form-container">
       <h2 class="form-title">Quick Booking</h2>
       <div class="whatsapp-subtitle">
@@ -394,15 +394,34 @@
     </div>
   </section>
 
-  <footer>
-    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
-      <div>© 2026 <strong>travaz Holidays</strong>. All rights reserved.</div>
-      <div>Home • Tour Packages • Services • About Us • Contact</div>
-    </div>
-  </footer>
+<script src="footer.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
 
+  <!-- Floating Action Buttons -->
+  <a href="https://wa.me/917305868976?text=Hi%20Travaz%20Holidays%2C%20I%20am%20interested%20in%20your%20services" target="_blank" class="float-btn wa" id="floatWa" title="WhatsApp Us">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="tel:+917305868976" class="float-btn call" id="floatCall" title="Call Us">
+    <i class="fas fa-phone"></i>
+  </a>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const waBtn = document.getElementById('floatWa');
+      const callBtn = document.getElementById('floatCall');
+      if(waBtn && callBtn) {
+        document.body.addEventListener('show.bs.modal', function () {
+          waBtn.classList.add('hidden');
+          callBtn.classList.add('hidden');
+        });
+        document.body.addEventListener('hidden.bs.modal', function () {
+          waBtn.classList.remove('hidden');
+          callBtn.classList.remove('hidden');
+        });
+      }
+    });
+  </script>
 </body>
 </html>

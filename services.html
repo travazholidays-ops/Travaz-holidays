@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Travaz Holidays</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Manrope:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .call-button {
+      background: #14b8a6;
+      color: white;
+      border: 1px solid #14b8a6;
+      padding: 10px 22px;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    .call-button:hover {
+      background: #fff;
+      color: #14b8a6;
+    }
+
+    .partner-card {
+      border: 1px solid #e0f2f1 !important;
+    }
+
+
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .card-text ul li {
+      font-family: 'Manrope', sans-serif;
+    }
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Travaz Logo" height="40"></a>
+      <a class="navbar-brand" href="index.html">Travaz <span>Holidays</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="tour packages.html">Tour Packages</a></li>
+          <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+            <a class="btn btn-brand" href="#" onclick="openWhatsApp()">Plan My Trip</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <!-- HERO -->
+  <section class="hero text-center" style="background-color: #f8fcfb; padding-bottom: 60px;">
+    <div class="container">
+      <h1 class="mb-3">Best Travel Agency in Bangalore Services</h1>
+      <p class="mx-auto" style="max-width:800px;">Our travels in Bangalore include hill station tours, pilgrimage trips,
+        airport transfers, and corporate travel solutions. Choose the best travel agency in Bangalore for reliable cab
+        booking and tempo traveller services.</p>
+    </div>
+  </section>
+
+  <!-- Service Page Content -->
+  <section class="container my-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-light">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title h5 mb-3">Customized Tour Packages</h3>
+            <div class="card-text text-muted mb-4" style="font-size:0.95rem; flex-grow: 1;">
+              <ul class="ps-3 mb-0">
+                <li class="mb-2">Curated South India tours for families, honeymooners, and educational groups</li>
+                <li class="mb-2">Cover hill stations (Ooty, Munnar) and spiritual destinations</li>
+                <li class="mb-2">Flexible itineraries with premium vehicles and verified stays</li>
+                <li>Professional guides with 24/7 support</li>
+              </ul>
+            </div>
+            <div class="mt-auto text-center">
+              <a href="tour packages.html" class="call-button w-100 text-decoration-none">Explore Packages</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm partner-card">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title h5 mb-3">Bus & Ticketing Agent</h3>
+            <div class="card-text text-muted mb-4" style="font-size:0.95rem; flex-grow: 1;">
+              <ul class="ps-3 mb-0">
+                <li class="mb-2">Authorized ticketing agent in Bangalore for India-wide bus bookings</li>
+                <li class="mb-2">AC/Non-AC buses, sleeper coaches, premium travel options</li>
+                <li class="mb-2">Instant confirmation and flexible cancellation policies</li>
+                <li>Competitive pricing with professional support</li>
+              </ul>
+            </div>
+            <div class="mt-auto text-center">
+              <a href="tel:+917305868976" class="call-button w-100">Call to Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-light">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title h5 mb-3">Local & Outstation Cabs</h3>
+            <div class="card-text text-muted mb-4" style="font-size:0.95rem; flex-grow: 1;">
+              <ul class="ps-3 mb-0">
+                <li class="mb-2">Well-maintained AC vehicles with experienced drivers</li>
+                <li class="mb-2">City commutes, airport transfers, interstate travel from Bangalore</li>
+                <li class="mb-2">Fleet: Swift Dzire, Etios, Innova Crysta, Tempo Travellers</li>
+                <li>GPS-enabled with transparent pricing, no hidden charges</li>
+              </ul>
+            </div>
+            <div class="mt-auto text-center">
+              <a href="index.html#quick-booking" class="call-button w-100 text-decoration-none">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm partner-card">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title h5 mb-3">Adventure Trekking</h3>
+            <div class="card-text text-muted mb-4" style="font-size:0.95rem; flex-grow: 1;">
+              <ul class="ps-3 mb-0">
+                <li class="mb-2">Hikes across Western Ghats, Nilgiris, and local trails</li>
+                <li class="mb-2">Certified guides with safety equipment and route planning</li>
+                <li class="mb-2">Perfect for adventure enthusiasts and corporate team building</li>
+                <li>Transportation, trekking gear, and meals included</li>
+              </ul>
+            </div>
+            <div class="mt-auto text-center">
+              <a href="tel:+917305868976" class="call-button w-100">Call for Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-light">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title h5 mb-3">Hourly Rental Packages</h3>
+            <div class="card-text text-muted mb-4" style="font-size:0.95rem; flex-grow: 1;">
+              <ul class="ps-3 mb-0">
+                <li class="mb-2">Flexible hour/kilometer packages</li>
+                <li class="mb-2">Perfect for sightseeing, shopping, business meetings, events</li>
+                <li class="mb-2">AC comfort with professional chauffeurs</li>
+                <li>Vehicles from sedans to Innovas and Tempo Travellers</li>
+              </ul>
+            </div>
+            <div class="mt-auto text-center">
+              <button onclick="openWhatsApp()" class="call-button w-100">Enquire Packages</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm partner-card">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title h5 mb-3">Hotel Booking</h3>
+            <div class="card-text text-muted mb-4" style="font-size:0.95rem; flex-grow: 1;">
+              <ul class="ps-3 mb-0">
+                <li class="mb-2">Verified, budget-friendly and premium accommodations across South India</li>
+                <li class="mb-2">Properties near attractions, city centers, transport hubs</li>
+                <li class="mb-2">AC, Wi-Fi, 24/7 support, hygienic facilities</li>
+                <li>Transparent pricing across Karnataka, Kerala, AP, Tamil Nadu</li>
+              </ul>
+            </div>
+            <div class="mt-auto text-center">
+              <a href="tel:+917305868976" class="call-button w-100">Call for Booking</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-light">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title h5 mb-3">Group & Corporate Travel</h3>
+            <div class="card-text text-muted mb-4" style="font-size:0.95rem; flex-grow: 1;">
+              <ul class="ps-3 mb-0">
+                <li class="mb-2">Educational excursions, corporate events, weddings, religious visits</li>
+                <li class="mb-2">12-26 seater Tempo Travellers, Mini Buses, luxury coaches</li>
+                <li class="mb-2">Pickup coordination and route planning directly from Bangalore</li>
+                <li>Bulk booking discounts and multi-day packages</li>
+              </ul>
+            </div>
+            <div class="mt-auto text-center">
+              <a href="index.html#quick-booking" class="call-button w-100 text-decoration-none">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm partner-card">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title h5 mb-3">Complete Travel Solutions</h3>
+            <div class="card-text text-muted mb-4" style="font-size:0.95rem; flex-grow: 1;">
+              <ul class="ps-3 mb-0">
+                <li class="mb-2">Trusted partner for comprehensive travel services</li>
+                <li class="mb-2">Flight/Train reservations, holiday packages, and custom itineraries</li>
+                <li class="mb-2">Complete itinerary planning and accommodation arrangements</li>
+                <li>Family vacations, business trips, honeymoon packages</li>
+              </ul>
+            </div>
+            <div class="mt-auto text-center">
+              <button onclick="openWhatsApp()" class="call-button w-100">Explore Packages</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm partner-card">
+          <div class="card-body d-flex flex-column">
+            <h3 class="card-title h5 mb-3">Travel Booking Partners</h3>
+            <div class="card-text text-muted mb-4" style="font-size:0.95rem; flex-grow:1;">
+              <ul class="ps-3 mb-0">
+                <li class="mb-2"><strong>MakeMyTrip & RedBus</strong></li>
+                <li class="mb-2">Easy bus, train & flight bookings</li>
+                <li class="mb-2">Reliable transit services</li>
+                <li>Fast & secure reservations</li>
+              </ul>
+            </div>
+            <div class="mt-auto text-center">
+              <a href="index.html#quick-booking" class="call-button w-100 text-decoration-none">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section class="py-5 mt-5" style="background:var(--light-bg); border-top:1px solid #dcdcdc;">
+    <div class="container text-center">
+      <h2 class="mb-3 h3" style="font-family:'Outfit', sans-serif; font-weight:700;">2026's Best Travel Services in
+        Bangalore</h2>
+      <p class="mx-auto text-muted" style="max-width:800px; font-family:'Manrope', sans-serif;">Travaz Holidays offers
+        the most reliable travel services in Bangalore, with easy WhatsApp bookings, clear pricing, fast response, and
+        full itinerary support. Whether it's hourly rentals, group tours, or hotel booking—we're your one-stop solution.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+<script src="footer.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    /* ════════════════════════════════════════
+       QUICK WHATSAPP BUTTON
+    ════════════════════════════════════════ */
+    function openWhatsApp() {
+      const msg = "Hi Travaz Holidays, I am interested in your services and would like more details.";
+      window.open(
+        "https://wa.me/917305868976?text=" + encodeURIComponent(msg),
+        "_blank"
+      );
+    }
+  </script>
+  <!-- Floating Action Buttons -->
+  <a href="https://wa.me/917305868976?text=Hi%20Travaz%20Holidays%2C%20I%20am%20interested%20in%20your%20services" target="_blank" class="float-btn wa" id="floatWa" title="WhatsApp Us">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="tel:+917305868976" class="float-btn call" id="floatCall" title="Call Us">
+    <i class="fas fa-phone"></i>
+  </a>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const waBtn = document.getElementById('floatWa');
+      const callBtn = document.getElementById('floatCall');
+      if(waBtn && callBtn) {
+        document.body.addEventListener('show.bs.modal', function () {
+          waBtn.classList.add('hidden');
+          callBtn.classList.add('hidden');
+        });
+        document.body.addEventListener('hidden.bs.modal', function () {
+          waBtn.classList.remove('hidden');
+          callBtn.classList.remove('hidden');
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

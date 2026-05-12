@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tour Packages | Travaz Holidays</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="tourpackage.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Travez Logo" height="40"></a>
+      <a class="navbar-brand" href="index.html">Travaz <span>Holidays</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="tour packages.html">Tour Packages</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+            <a class="btn btn-brand" href="#" onclick="openWhatsApp()">Plan My Trip</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container text-center">
+      <h1>Explore South India with Travaz Holidays</h1>
+      <p class="mx-auto" style="max-width:600px;color:#6b7280;">Discover unforgettable journeys from Bangalore with expertly curated tour packages — family trips, honeymoon escapes, heritage trails and nature getaways.</p>
+    </div>
+  </section>
+
+  <section style="padding:10px 0 20px;">
+      <div class="container text-center">
+        <h2 style="margin-bottom:6px;">Select Tour Duration</h2>
+        <p style="color:#6b7280;margin-bottom:0;">Click a duration to filter packages</p>
+        <div class="duration-filter-wrap flex-wrap d-flex justify-content-center gap-2 mt-3">
+          <button id="1day" class="dur-btn active" onclick="filterPackages('1day',this)">1 Day</button>
+          <button id="2day" class="dur-btn" onclick="filterPackages('2day',this)">2 Days</button>
+          <button id="3day" class="dur-btn" onclick="filterPackages('3day',this)">3 Days</button>
+          <button id="4day" class="dur-btn" onclick="filterPackages('4day',this)">4 Days</button>
+          <button id="5day" class="dur-btn" onclick="filterPackages('5day',this)">5 Days</button>
+          <button id="6day" class="dur-btn" onclick="filterPackages('6day',this)">6 Days</button>
+          <button id="7day" class="dur-btn" onclick="filterPackages('7day',this)">7 Days</button>
+        </div>
+      </div>
+    </section>
+
+  <section class="section" style="padding-top:10px;">
+      <div class="container">
+        <div class="row g-4" id="pkgGrid">
+
+          <div class="col-md-4 pkg 1day">
+            <div class="destination-card" style="background-image:url('images/nandi.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Family</span><span class="tag">Sunrise</span></div>
+                <h4>Nandi Hills</h4>
+                <p class="sub">Bangalore → Nandi Hills → Bangalore</p>
+                <button class="btn-view" onclick="openPkg('nandi1day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 1day">
+            <div class="destination-card" style="background-image:url('images/mysuru.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Family</span><span class="tag">Heritage</span></div>
+                <h4>Mysuru</h4>
+                <p class="sub">Bangalore → Mysuru → Bangalore</p>
+                <button class="btn-view" onclick="openPkg('mysuru1day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 1day">
+            <div class="destination-card" style="background-image:url('images/shivanasamudra.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Family</span><span class="tag">Waterfalls</span></div>
+                <h4>Shivanasamudra Falls</h4>
+                <p class="sub">Bangalore → Shivanasamudra → Bangalore</p>
+                <button class="btn-view" onclick="openPkg('shiva1day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 1day">
+            <div class="destination-card" style="background-image:url('images/bannerghatta.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Family</span><span class="tag">Wildlife</span></div>
+                <h4>Bannerghatta Safari</h4>
+                <p class="sub">Bangalore → Bannerghatta → Bangalore</p>
+                <button class="btn-view" onclick="openPkg('banner1day')">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 pkg 1day">
+            <div class="destination-card" style="background-image:url('images/skandagiri.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Adventure</span><span class="tag">Night Trek</span></div>
+                <h4>Skandagiri</h4>
+                <p class="sub">Bangalore → Skandagiri → Bangalore</p>
+                <button class="btn-view" onclick="openPkg('skanda1day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 1day">
+            <div class="destination-card" style="background-image:url('images/savandurga.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Adventure</span><span class="tag">Trek</span></div>
+                <h4>Savandurga</h4>
+                <p class="sub">Bangalore → Savandurga → Bangalore</p>
+                <button class="btn-view" onclick="openPkg('savan1day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 1day">
+            <div class="destination-card" style="background-image:url('images/anthargange.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Adventure</span><span class="tag">Caves</span></div>
+                <h4>Anthargange</h4>
+                <p class="sub">Bangalore → Anthargange → Bangalore</p>
+                <button class="btn-view" onclick="openPkg('anthar1day')">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 pkg 1day">
+            <div class="destination-card" style="background-image:url('images/hogenakkal.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Nature</span><span class="tag">Coracle</span></div>
+                <h4>Hogenakkal Falls</h4>
+                <p class="sub">Bangalore → Hogenakkal → Bangalore</p>
+                <button class="btn-view" onclick="openPkg('hogen1day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 1day">
+            <div class="destination-card" style="background-image:url('images/mekedatu.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Nature</span><span class="tag">River</span></div>
+                <h4>Mekedatu & Sangama</h4>
+                <p class="sub">Bangalore → Sangama → Mekedatu → Bangalore</p>
+                <button class="btn-view" onclick="openPkg('meke1day')">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 pkg 1day">
+            <div class="destination-card" style="background-image:url('images/lepakshi.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Heritage</span><span class="tag">Temple</span></div>
+                <h4>Lepakshi Temple</h4>
+                <p class="sub">Bangalore → Lepakshi → Bangalore</p>
+                <button class="btn-view" onclick="openPkg('lepakshi1day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 1day">
+            <div class="destination-card" style="background-image:url('images/srirangapatna.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Heritage</span><span class="tag">Fort</span></div>
+                <h4>Srirangapatna</h4>
+                <p class="sub">Bangalore → Srirangapatna → Bangalore</p>
+                <button class="btn-view" onclick="openPkg('srira1day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 1day">
+            <div class="destination-card" style="background-image:url('images/shravanabelagola.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Pilgrimage</span><span class="tag">Monument</span></div>
+                <h4>Shravanabelagola</h4>
+                <p class="sub">Bangalore → Shravanabelagola → Bangalore</p>
+                <button class="btn-view" onclick="openPkg('shravana1day')">View Details</button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-4 pkg 2day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/coorg.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Hill Station</span></div>
+                <h4>Coorg Retreat</h4>
+                <p class="sub">2 Days / 1 Night</p>
+                <button class="btn-view" onclick="openPkg('coorg2day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 2day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/chikmagalur.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Hill Station</span></div>
+                <h4>Chikmagalur</h4>
+                <p class="sub">2 Days / 1 Night</p>
+                <button class="btn-view" onclick="openPkg('chik2day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 2day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/sakleshpur.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Hill Station</span></div>
+                <h4>Sakleshpur</h4>
+                <p class="sub">2 Days / 1 Night</p>
+                <button class="btn-view" onclick="openPkg('sakleshpur2day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 2day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/yercaud.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Hill Station</span></div>
+                <h4>Yercaud</h4>
+                <p class="sub">2 Days / 1 Night</p>
+                <button class="btn-view" onclick="openPkg('yercaud2day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 2day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/mysuru.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">City Escape</span></div>
+                <h4>Mysuru Overnight</h4>
+                <p class="sub">2 Days / 1 Night</p>
+                <button class="btn-view" onclick="openPkg('mysuru2day')">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 pkg 2day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/kabini.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Wildlife</span><span class="tag">Safari</span></div>
+                <h4>Kabini Forest</h4>
+                <p class="sub">2 Days / 1 Night</p>
+                <button class="btn-view" onclick="openPkg('kabini2day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 2day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/bandipur.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Wildlife</span><span class="tag">Safari</span></div>
+                <h4>Bandipur National Park</h4>
+                <p class="sub">2 Days / 1 Night</p>
+                <button class="btn-view" onclick="openPkg('bandipur2day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 2day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/bhadra.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Wildlife</span></div>
+                <h4>Bhadra Sanctuary</h4>
+                <p class="sub">2 Days / 1 Night</p>
+                <button class="btn-view" onclick="openPkg('bhadra2day')">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 pkg 2day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/mysuru-srirangapatna.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Heritage</span></div>
+                <h4>Mysuru + Srirangapatna</h4>
+                <p class="sub">2 Days / 1 Night</p>
+                <button class="btn-view" onclick="openPkg('mysrira2day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 2day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/belur-halebidu.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Heritage</span></div>
+                <h4>Belur + Halebidu</h4>
+                <p class="sub">2 Days / 1 Night</p>
+                <button class="btn-view" onclick="openPkg('belurhale2day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 2day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/dharmasthala.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Pilgrimage</span></div>
+                <h4>Dharmasthala</h4>
+                <p class="sub">2 Days / 1 Night</p>
+                <button class="btn-view" onclick="openPkg('dharma2day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 2day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/tirupati.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Pilgrimage</span></div>
+                <h4>Tirupati Darshan</h4>
+                <p class="sub">2 Days / 1 Night</p>
+                <button class="btn-view" onclick="openPkg('tirupati2day')">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 pkg 2day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/dandeli.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Adventure</span><span class="tag">River</span></div>
+                <h4>Dandeli Rafting</h4>
+                <p class="sub">2 Days / 1 Night</p>
+                <button class="btn-view" onclick="openPkg('dandeli2day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 2day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/gokarna.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Coastal</span><span class="tag">Beaches</span></div>
+                <h4>Gokarna Escape</h4>
+                <p class="sub">2 Days / 1 Night</p>
+                <button class="btn-view" onclick="openPkg('gokarna2day')">View Details</button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-4 pkg 3day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/ooty.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Bestseller</span></div>
+                <h4>Ooty + Coonoor</h4>
+                <p class="sub">3 Days / 2 Nights</p>
+                <button class="btn-view" onclick="openPkg('ootycoon3day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 3day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/coorg.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Bestseller</span></div>
+                <h4>Coorg Explorer</h4>
+                <p class="sub">3 Days / 2 Nights</p>
+                <button class="btn-view" onclick="openPkg('coorg3day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 3day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/wayanad.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Nature</span></div>
+                <h4>Wayanad Wilderness</h4>
+                <p class="sub">3 Days / 2 Nights</p>
+                <button class="btn-view" onclick="openPkg('wayanad3day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 3day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/chikmagalur.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Coffee Estates</span></div>
+                <h4>Chikmagalur</h4>
+                <p class="sub">3 Days / 2 Nights</p>
+                <button class="btn-view" onclick="openPkg('chik3day')">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 pkg 3day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/madurai.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Temple</span></div>
+                <h4>Madurai</h4>
+                <p class="sub">3 Days / 2 Nights</p>
+                <button class="btn-view" onclick="openPkg('madurai3day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 3day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/rameswaram.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Temple</span></div>
+                <h4>Rameswaram</h4>
+                <p class="sub">3 Days / 2 Nights</p>
+                <button class="btn-view" onclick="openPkg('rames3day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 3day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/thanjavur.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Heritage</span></div>
+                <h4>Thanjavur Brihadeeswarar</h4>
+                <p class="sub">3 Days / 2 Nights</p>
+                <button class="btn-view" onclick="openPkg('thanjavur3day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 3day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/kanchipuram.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Heritage</span></div>
+                <h4>Kanchipuram + Chennai</h4>
+                <p class="sub">3 Days / 2 Nights</p>
+                <button class="btn-view" onclick="openPkg('kanchichennai3day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 3day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/tirupati.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Pilgrimage</span></div>
+                <h4>Tirupati + Chennai</h4>
+                <p class="sub">3 Days / 2 Nights</p>
+                <button class="btn-view" onclick="openPkg('tiruchennai3day')">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 pkg 3day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/mysuru-coorg.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Combo</span></div>
+                <h4>Mysuru + Coorg</h4>
+                <p class="sub">3 Days / 2 Nights</p>
+                <button class="btn-view" onclick="openPkg('myscoorg3day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 3day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/mysuru-ooty.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Combo</span></div>
+                <h4>Mysuru + Ooty</h4>
+                <p class="sub">3 Days / 2 Nights</p>
+                <button class="btn-view" onclick="openPkg('mysooty3day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 3day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/ooty-masinagudi.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Combo</span></div>
+                <h4>Ooty + Masinagudi</h4>
+                <p class="sub">3 Days / 2 Nights</p>
+                <button class="btn-view" onclick="openPkg('ootymasin3day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 3day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/gokarna.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Coastal</span></div>
+                <h4>Gokarna</h4>
+                <p class="sub">3 Days / 2 Nights</p>
+                <button class="btn-view" onclick="openPkg('gokarna3day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 3day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/dandeli.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Adventure</span></div>
+                <h4>Dandeli</h4>
+                <p class="sub">3 Days / 2 Nights</p>
+                <button class="btn-view" onclick="openPkg('dandeli3day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 3day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/hampi.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Heritage</span></div>
+                <h4>Hampi</h4>
+                <p class="sub">3 Days / 2 Nights</p>
+                <button class="btn-view" onclick="openPkg('hampi3day')">View Details</button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-4 pkg 4day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/coorg-wayanad.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Premium</span><span class="tag">Hills</span></div>
+                <h4>Coorg + Wayanad</h4>
+                <p class="sub">4 Days / 3 Nights</p>
+                <button class="btn-view" onclick="openPkg('coorgway4day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 4day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/ooty-kodaikanal.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Premium</span><span class="tag">Hills</span></div>
+                <h4>Ooty + Kodaikanal</h4>
+                <p class="sub">4 Days / 3 Nights</p>
+                <button class="btn-view" onclick="openPkg('ootykodai4day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 4day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/mysuru-ooty-kodaikanal.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Premium</span><span class="tag">Hills</span></div>
+                <h4>Mysuru + Ooty + Kodaikanal</h4>
+                <p class="sub">4 Days / 3 Nights</p>
+                <button class="btn-view" onclick="openPkg('mysootykodai4day')">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 pkg 4day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/madurai-rameswaram.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Temple Circuit</span></div>
+                <h4>Madurai + Rameswaram</h4>
+                <p class="sub">4 Days / 3 Nights</p>
+                <button class="btn-view" onclick="openPkg('madurames4day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 4day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/rameswaram-kanyakumari.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Temple Circuit</span></div>
+                <h4>Rameswaram + Kanyakumari</h4>
+                <p class="sub">4 Days / 3 Nights</p>
+                <button class="btn-view" onclick="openPkg('rameskanya4day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 4day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/thiruchendur.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Temple Circuit</span></div>
+                <h4>Thiruchendur + Madurai</h4>
+                <p class="sub">4 Days / 3 Nights</p>
+                <button class="btn-view" onclick="openPkg('thirumadu4day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 4day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/kochi.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Temple Circuit</span></div>
+                <h4>Guruvayur + Kochi</h4>
+                <p class="sub">4 Days / 3 Nights</p>
+                <button class="btn-view" onclick="openPkg('gurukochi4day')">View Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 pkg 4day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/munnar.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Kerala</span></div>
+                <h4>Munnar Tea Hills</h4>
+                <p class="sub">4 Days / 3 Nights</p>
+                <button class="btn-view" onclick="openPkg('munnar4day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 4day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/munnar-thekkady.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Kerala</span></div>
+                <h4>Munnar + Thekkady</h4>
+                <p class="sub">4 Days / 3 Nights</p>
+                <button class="btn-view" onclick="openPkg('munnarthek4day')">View Details</button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-4 pkg 5day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/south-tn-temples.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Grand Temple Tour</span></div>
+                <h4>South Tamil Nadu Temples</h4>
+                <p class="sub">Madurai → Rameswaram → Kanyakumari → Thiruchendur</p>
+                <button class="btn-view" onclick="openPkg('stn5day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 5day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/tn-heritage.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Heritage Circuit</span></div>
+                <h4>Tamil Nadu Heritage</h4>
+                <p class="sub">Chennai → Mahabalipuram → Pondy → Kanchipuram → Thanjavur</p>
+                <button class="btn-view" onclick="openPkg('tnheritage5day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 5day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/kerala.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">God's Own Country</span></div>
+                <h4>Kerala Classic Tour</h4>
+                <p class="sub">Munnar → Thekkady → Alappuzha</p>
+                <button class="btn-view" onclick="openPkg('kerala5day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 5day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/coastal-karnataka.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Coastal Trip</span></div>
+                <h4>Coastal Karnataka</h4>
+                <p class="sub">Udupi → Murudeshwar → Gokarna</p>
+                <button class="btn-view" onclick="openPkg('coastalkar5day')">View Details</button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-4 pkg 6day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/tn-temple-circuit.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Epic Tour</span></div>
+                <h4>Complete TN Temple Circuit</h4>
+                <p class="sub">Chennai to Kanyakumari</p>
+                <button class="btn-view" onclick="openPkg('tntemple6day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 6day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/kerala-grand.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Epic Tour</span></div>
+                <h4>Kerala Grand Tour</h4>
+                <p class="sub">Kochi → Munnar → Thekkady → Alappuzha → Guruvayur</p>
+                <button class="btn-view" onclick="openPkg('keralagrand6day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 6day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/karnataka-grand.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Epic Tour</span></div>
+                <h4>Karnataka Grand Tour</h4>
+                <p class="sub">Mysuru → Coorg → Chikmagalur → Hampi</p>
+                <button class="btn-view" onclick="openPkg('karnatakagrand6day')">View Details</button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-4 pkg 7day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/south-india.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Ultimate</span></div>
+                <h4>Complete South India Tour</h4>
+                <p class="sub">Mysuru → Ooty → Kodaikanal → Madurai → Rameswaram → Kanyakumari</p>
+                <button class="btn-view" onclick="openPkg('southindia7day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 7day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/temple-kerala.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Ultimate</span></div>
+                <h4>Temple + Kerala Combo</h4>
+                <p class="sub">Madurai → Rameswaram → Kanyakumari → Guruvayur → Kochi → Munnar</p>
+                <button class="btn-view" onclick="openPkg('templekerala7day')">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pkg 7day" style="display:none;">
+            <div class="destination-card" style="background-image:url('images/tn-pondy.webp')">
+              <div>
+                <div class="badge-strip"><span class="tag">Ultimate</span></div>
+                <h4>TN + Pondy + Chennai</h4>
+                <p class="sub">Chennai → Mahabalipuram → Pondy → Thanjavur → Madurai → Rameswaram</p>
+                <button class="btn-view" onclick="openPkg('tnpondy7day')">View Details</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  <div class="modal fade pkg-modal" id="pkgDetailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-hero" id="modalHero">
+          <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" style="z-index:10;"></button>
+          <div class="modal-hero-content container-fluid">
+            <div class="row align-items-center">
+              <div class="col-md-8">
+                <h2 id="modalTitle">Package Name</h2>
+                <p id="modalRoute">Route</p>
+                <div class="modal-badges" id="modalBadges"></div>
+              </div>
+              <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                <button class="btn-book-now" onclick="openBookingModal()">Book Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-meta" id="modalMeta"></div>
+        <div class="modal-body p-0">
+          <div class="modal-body-inner">
+            <div id="modalDays"></div>
+            <div id="modalHotels"></div>
+            <div id="modalTip"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="bookingModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-4 position-relative">
+        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
+        <h5 class="mb-3">Enter Trip Details</h5>
+        <form id="bookingForm">
+          <input type="text" id="name" class="form-control mb-2" placeholder="Your Name" required>
+          <input type="tel" id="phone" class="form-control mb-2" placeholder="Phone Number" required maxlength="10" oninput="validatePhone(this)">
+          <input type="text" id="pickup" class="form-control mb-2" placeholder="Pickup Location" required>
+          <input type="text" id="drop" class="form-control mb-2" placeholder="Drop Location" required>
+          <label class="mb-1">Pickup Date & Time</label>
+          <input type="text" id="tripDate" name="pickupDT" class="form-control mb-2" placeholder="DD-MM-YYYY HH:MM AM/PM" required>
+          <input type="number" id="passengers" class="form-control mb-2" placeholder="Number of Passengers" required min="1">
+          <label>Accommodation Required?</label>
+          <select id="accommodation" class="form-select mb-2" onchange="toggleAccommodation()" required>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+          </select>
+          <div id="accommodationBox" style="display:none;">
+            <input type="number" id="adults" class="form-control mb-2" placeholder="Adults (min 1)" min="1">
+            <input type="number" id="children" class="form-control mb-2" placeholder="Children" min="0" oninput="generateChildAges()">
+            <div id="childAges"></div>
+          </div>
+          <button type="submit" class="btn btn-brand w-100 mt-3">Book via WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<script src="footer.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="tourpackage.js"></script>
+
+  <a href="https://wa.me/917305868976?text=Hi%20Travaz%20Holidays%2C%20I%20am%20interested%20in%20your%20services" target="_blank" class="float-btn wa" id="floatWa" title="WhatsApp Us">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="tel:+917305868976" class="float-btn call" id="floatCall" title="Call Us">
+    <i class="fas fa-phone"></i>
+  </a>
+
+</body>
+</html>

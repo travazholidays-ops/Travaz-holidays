@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Travaz Holidays</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Custom styles for Contact Page */
+    .contact-hero {
+      background-color: #f8fcfb;
+      padding: 140px 0 80px;
+      text-align: center;
+      border-bottom: 1px solid #e0f2f1;
+    }
+
+    .contact-hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: #111;
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+    }
+
+    .contact-hero p {
+      font-family: 'Manrope', sans-serif;
+      font-size: 1.15rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    .contact-info-card {
+      background: white;
+      padding: 35px 30px;
+      border-radius: 16px;
+      border: 1px solid #e0f2f1;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
+      transition: all 0.3s ease;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+      border-color: var(--accent);
+    }
+
+    .contact-info-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--accent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .contact-info-card:hover::before {
+      opacity: 1;
+    }
+
+    .info-icon-wrapper {
+      width: 60px;
+      height: 60px;
+      background: #e6f7f5;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--accent);
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .contact-info-card:hover .info-icon-wrapper {
+      background: var(--accent);
+      color: white;
+    }
+
+    .info-content h3 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #111;
+      margin-bottom: 10px;
+    }
+
+    .info-content p,
+    .info-content a {
+      font-family: 'Manrope', sans-serif;
+      color: #555;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      display: block;
+    }
+
+    .info-content a:hover {
+      color: var(--accent);
+    }
+
+    .contact-form-wrapper {
+      background: #ffffff;
+      padding: 50px;
+      border-radius: 16px;
+      border: 1px solid #eee;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+
+    .contact-form-wrapper h2 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      color: #111;
+      margin-bottom: 30px;
+      font-size: 2.2rem;
+    }
+
+    .input-group-custom {
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .input-group-custom label {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 10px;
+      display: block;
+      font-size: 0.95rem;
+    }
+
+    .input-group-custom input,
+    .input-group-custom textarea,
+    .input-group-custom select {
+      width: 100%;
+      padding: 16px 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px !important;
+      font-family: 'Manrope', sans-serif;
+      font-size: 1rem;
+      color: #333;
+      background: #fcfcfc;
+      transition: all 0.3s ease;
+    }
+
+    .input-group-custom input:focus,
+    .input-group-custom textarea:focus,
+    .input-group-custom select:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: #ffffff;
+      box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.1);
+    }
+
+    .input-group-custom input::placeholder,
+    .input-group-custom textarea::placeholder {
+      color: #aaa;
+    }
+
+    .btn-submit-contact {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 18px 30px;
+      border-radius: 10px !important;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      width: 100%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn-submit-contact:hover {
+      background: #119e90;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(20, 184, 166, 0.2);
+    }
+
+    .btn-whatsapp-alt {
+      background: transparent;
+      color: #25D366;
+      border: 2px solid #25D366;
+      padding: 16px 30px;
+      border-radius: 10px !important;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      width: 100%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+      text-decoration: none;
+    }
+
+    .btn-whatsapp-alt:hover {
+      background: #25D366;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-link {
+      width: 45px;
+      height: 45px;
+      background: #f8fcfb;
+      border: 1px solid #e0f2f1;
+      border-radius: 50% !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-link:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .map-container {
+      width: 100%;
+      height: 450px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+      border: 1px solid #eee;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Animation classes */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .contact-form-wrapper {
+        padding: 30px 20px;
+      }
+      .contact-info-card {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Travaz Logo" height="40" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';"></a>
+      <a class="navbar-brand" href="index.html">Travaz <span>Holidays</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="tour packages.html">Tour Packages</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+            <a class="btn btn-brand" href="#" onclick="openWhatsApp()">Plan My Trip</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contact Hero Section -->
+  <section class="contact-hero">
+    <div class="container">
+      <div class="fade-up">
+        <h1>Get in Touch With Us</h1>
+        <p>Have questions about our travel packages, need a custom itinerary, or want to book a reliable cab? Our dedicated team in Bangalore is here to assist you 24/7.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Info & Form Section -->
+  <section class="section py-5 my-3">
+    <div class="container">
+      <div class="row g-5 align-items-start">
+
+        <!-- Contact Information column -->
+        <div class="col-lg-5">
+          <div class="fade-up" style="transition-delay: 0.1s;">
+            <div class="contact-info-card mb-4">
+              <div class="info-icon-wrapper">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="info-content">
+                <h3>Our Office Location</h3>
+                <p>Travaz Holidays<br>Bangalore, Karnataka<br>India</p>
+              </div>
+            </div>
+
+            <div class="contact-info-card mb-4">
+              <div class="info-icon-wrapper">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="info-content">
+                <h3>Call Us Directly</h3>
+                <p>Speak to our travel experts for immediate assistance.</p>
+                <a href="tel:+917305868976" class="fw-bold fs-5 mt-2 text-dark">+91 95913 73534</a>
+                <a href="tel:+917305868976" class="fw-bold fs-5 text-dark">+91 95913 73534</a> <!-- Duplicate just if there are multiple, typically leaving one is fine, let's just make it prominent -->
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="info-icon-wrapper">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="info-content">
+                <h3>Email Us</h3>
+                <p>Send us your queries and we'll get back to you within 24 hours.</p>
+                <a href="mailto:info@travazholidays.com" class="fw-bold mt-2">info@travazholidays.com</a>
+              </div>
+
+              <div class="mt-4 pt-3 border-top">
+                <h4 class="fs-6 fw-bold mb-3 font-outfit">Follow Us</h4>
+                <div class="social-links">
+                  <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form column -->
+        <div class="col-lg-7">
+          <div class="contact-form-wrapper fade-up" style="transition-delay: 0.3s;">
+            <h2>Send Us a Message</h2>
+            <form id="contactForm" onsubmit="submitForm(event)">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="input-group-custom">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" placeholder="John Doe" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="input-group-custom">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="input-group-custom">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="john@example.com">
+              </div>
+
+              <div class="input-group-custom">
+                <label for="subject">Inquiry Type</label>
+                <select id="subject">
+                  <option value="Tour Package Booking">Tour Package Booking</option>
+                  <option value="Cab/Taxi Booking">Cab/Taxi Booking</option>
+                  <option value="Custom Itinerary Request">Custom Itinerary Request</option>
+                  <option value="Corporate Travel">Corporate Travel</option>
+                  <option value="General Inquiry">General Inquiry</option>
+                </select>
+              </div>
+
+              <div class="input-group-custom">
+                <label for="message">Your Message *</label>
+                <textarea id="message" rows="5" placeholder="Tell us about your travel plans, number of people, preferred dates, etc." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit-contact">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
+
+              <a href="#" onclick="contactViaWhatsApp(); return false;" class="btn-whatsapp-alt">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp Instead
+              </a>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+<script src="footer.js"></script>
+
+  <!-- Floating Action Buttons -->
+  <a href="https://wa.me/917305868976?text=Hi%20Travaz%20Holidays%2C%20I%20am%20interested%20in%20your%20services" target="_blank" class="float-btn wa" id="floatWa" title="WhatsApp Us">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="tel:+917305868976" class="float-btn call" id="floatCall" title="Call Us">
+    <i class="fas fa-phone"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    /* WhatsApp Default function */
+    function openWhatsApp() {
+      const msg = "Hi Travaz Holidays, I am interested in your services and would like to know more about the top tour operators in Bangalore.";
+      window.open(
+        "https://wa.me/917305868976?text=" + encodeURIComponent(msg),
+        "_blank"
+      );
+    }
+
+    /* WhatsApp From Contact Form */
+    function contactViaWhatsApp() {
+      const name = document.getElementById('name').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+
+      let msg = `Hi Travaz Holidays!`;
+      if(name) msg += ` My name is ${name}.`;
+      msg += ` I'm inquiring about: *${subject}*.`;
+      if(message) msg += `\n\nDetails: ${message}`;
+
+      window.open(
+        "https://wa.me/917305868976?text=" + encodeURIComponent(msg),
+        "_blank"
+      );
+    }
+
+    /* Form Submit handler - using WhatsApp as fallback backend */
+    function submitForm(e) {
+      e.preventDefault();
+      // Since there's no backend specified, we redirect the form submission to WhatsApp
+      alert("Thank you for your message! You will now be redirected to WhatsApp to complete your inquiry.");
+      contactViaWhatsApp();
+      e.target.reset();
+    }
+
+    /* Animation on scroll */
+    document.addEventListener('DOMContentLoaded', function () {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.fade-up').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Floating Buttons hide logic for modals if any
+      const waBtn = document.getElementById('floatWa');
+      const callBtn = document.getElementById('floatCall');
+      if(waBtn && callBtn) {
+        document.body.addEventListener('show.bs.modal', function () {
+          waBtn.classList.add('hidden');
+          callBtn.classList.add('hidden');
+        });
+        document.body.addEventListener('hidden.bs.modal', function () {
+          waBtn.classList.remove('hidden');
+          callBtn.classList.remove('hidden');
+        });
+      }
+    });
+
+  </script>
+</body>
+
+</html>
