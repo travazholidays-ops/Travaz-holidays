@@ -79,11 +79,11 @@ const packages = {
   templekerala7day: { title: "Temple + Kerala Combo", route: "Madurai → Rameswaram → Kanyakumari → Guruvayur → Kochi → Munnar", image: "images/temple-kerala.webp", badges: ["Ultimate"], meta: [{ l: "Duration", v: "7 Days" }], days: [{ num: 1, title: "Madurai", slots: [{ t: "6:00 AM", x: "Depart." }, { t: "4:30 PM", x: "Meenakshi Temple." }] }, { num: 2, title: "Rameswaram", slots: [{ t: "9:00 AM", x: "Palace." }, { t: "4:00 PM", x: "Pamban Bridge." }] }, { num: 3, title: "Kanyakumari", slots: [{ t: "8:00 AM", x: "Dhanushkodi." }, { t: "5:30 PM", x: "Sunset." }] }, { num: 4, title: "Guruvayur", slots: [{ t: "6:00 AM", x: "Vivekananda Rock." }, { t: "5:30 PM", x: "Kerala temple." }] }, { num: 5, title: "Kochi", slots: [{ t: "8:00 AM", x: "Elephant Sanctuary." }, { t: "1:00 PM", x: "Fort Kochi." }] }, { num: 6, title: "Munnar", slots: [{ t: "9:00 AM", x: "Eravikulam." }, { t: "3:30 PM", x: "Tea Hills." }] }, { num: 7, title: "Return", slots: [{ t: "8:30 AM", x: "Breakfast." }, { t: "10:00 AM", x: "Return." }] }], hotels: [], tip: "Spiritual Tamil Nadu meets relaxing Kerala." },
   tnpondy7day: { title: "TN + Pondy + Chennai", route: "Chennai → Mahabalipuram → Pondy → Thanjavur → Madurai → Rameswaram", image: "images/tn-pondy.webp", badges: ["Ultimate"], meta: [{ l: "Duration", v: "7 Days" }], days: [{ num: 1, title: "Chennai", slots: [{ t: "6:00 AM", x: "Depart." }, { t: "3:30 PM", x: "Kapaleeshwarar." }] }, { num: 2, title: "Pondicherry", slots: [{ t: "8:30 AM", x: "Shore temples." }, { t: "5:30 PM", x: "French Quarter." }] }, { num: 3, title: "Tanjore", slots: [{ t: "9:00 AM", x: "Auroville." }, { t: "5:00 PM", x: "Arrive Thanjavur." }] }, { num: 4, title: "Madurai", slots: [{ t: "8:00 AM", x: "Brihadeeswarar." }, { t: "6:30 PM", x: "Meenakshi." }] }, { num: 5, title: "Rameswaram", slots: [{ t: "9:30 AM", x: "Palace." }, { t: "3:00 PM", x: "Bridge." }] }, { num: 6, title: "Dhanushkodi", slots: [{ t: "6:00 AM", x: "Rituals." }, { t: "3:00 PM", x: "Ghost town." }] }, { num: 7, title: "Return", slots: [{ t: "8:00 AM", x: "Checkout." }, { t: "9:00 AM", x: "Return." }] }], hotels: [], tip: "Explores the entire eastern coastline." }
 };
-
 /* ════════════════════════════════════════
    GLOBAL VARIABLES
 ════════════════════════════════════════ */
 let currentPkgTitle = "";
+let currentPkgDuration = ""; // NEW: Added variable to store duration
 
 
 /* ════════════════════════════════════════
@@ -226,6 +226,10 @@ function openPkg(id) {
   window.location.hash = id;
   currentPkgTitle = p.title;
 
+  // NEW: Find the duration from the meta tags and save it globally
+  const durationMeta = p.meta.find(m => m.l === "Duration");
+  currentPkgDuration = durationMeta ? durationMeta.v : "Not Specified";
+
   document.getElementById("modalHero").style.backgroundImage = `url('${p.image}')`;
   document.getElementById("modalTitle").textContent = p.title;
   document.getElementById("modalRoute").textContent = p.route;
@@ -302,7 +306,8 @@ document.getElementById("bookingForm").addEventListener("submit", function (e) {
     return;
   }
 
-  let msg = `Hi Travaz Holidays 👋\n\nPackage: ${currentPkgTitle}\nName: ${name}\nPhone: ${phone}\nPassengers: ${passengers}\nPickup: ${pickup}\nDrop: ${drop}\nDate: ${date}\nAccommodation: ${acc}`;
+  // NEW: Duration is now added to the WhatsApp message right under the Package Title!
+  let msg = `Hi Travaz Holidays 👋\n\nPackage: ${currentPkgTitle}\nDuration: ${currentPkgDuration}\nName: ${name}\nPhone: ${phone}\nPassengers: ${passengers}\nPickup: ${pickup}\nDrop: ${drop}\nDate: ${date}\nAccommodation: ${acc}`;
 
   if (acc === "Yes") {
     let adults = document.getElementById("adults").value;

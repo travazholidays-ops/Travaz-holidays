@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <strong>Service Areas:</strong>
                 Bangalore (Karnataka) & Coimbatore (Tamil Nadu)
               </p>
-              
+
               <p class="footer-text">
                 <i class="fas fa-map-marker-alt text-brand"></i>
                 <strong>Headquarters:</strong>
@@ -59,11 +59,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
             <div class="footer-social-wrap">
 
-              <a href="#" class="footer-social-icon facebook" aria-label="Facebook">
+              <a href="https://www.facebook.com/travazholidays" class="footer-social-icon facebook" aria-label="Facebook">
                 <i class="fab fa-facebook-f"></i>
               </a>
 
-              <a href="#" class="footer-social-icon instagram" aria-label="Instagram">
+              <a href="https://www.instagram.com/travazholidays" class="footer-social-icon instagram" aria-label="Instagram">
                 <i class="fab fa-instagram"></i>
               </a>
 
